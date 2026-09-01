@@ -1,6 +1,6 @@
 import "./Hero.css";
 import couplePhoto from "../../assets/images/couple1.jpeg";
-import CountDown from "../Countdown";
+import CountDown from "../Coundown/Countdown";
 function Hero (){
 return(
   <section className='hero'
@@ -17,6 +17,9 @@ return(
     <p className='hero-date'>December 28, 2026</p>
     <p className='hero-description'>Two hearts, one beautiful journey, 
     <br />and a lifetime to go.</p>
+    <p className="hero-countdown-label">
+    COUTING DOWN TO FOREVER
+        </p>
     <CountDown/>
   </div>
   <div className="hero-scroll">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './Countdown.css';
 
 function CountDown(){
 
@@ -32,29 +33,45 @@ function CountDown(){
     return ()=> clearInterval(timer);
   });
 
+  const format = (value: number) =>
+  String(value).padStart(2, "0");
+
   return(
-    <section className="countdown">
-      <p className="section-label">THE BIG DAY</p>
-      <h2>Counting down to forever</h2>
-      <div className="countdown-container">
-        <div>
-          <strong>{timeleft.days}</strong>
-          <span>Days</span>
-        </div>
-        <div>
-          <strong>{timeleft.hours}</strong>
-          <span>Hours</span>
-        </div>
-        <div>
-          <strong>{timeleft.minutes}</strong>
-          <span>Minutes</span>
-        </div>
-        <div>
-          <strong>{timeleft.seconds}</strong>
-          <span>Seconds</span>
-        </div>
+    <div className="countdown">
+
+      <div className="countdown-item">
+        <strong key={timeleft.days}>
+          {format(timeleft.days)}
+        </strong>
+
+        <span>Days</span>
       </div>
-    </section>
+
+      <div className="countdown-item">
+        <strong key={timeleft.hours}>
+          {format(timeleft.hours)}
+        </strong>
+
+        <span>Hours</span>
+      </div>
+
+      <div className="countdown-item">
+        <strong key={timeleft.minutes}>
+          {format(timeleft.minutes)}
+        </strong>
+
+        <span>Minutes</span>
+      </div>
+
+      <div className="countdown-item">
+        <strong key={timeleft.seconds}>
+          {format(timeleft.seconds)}
+        </strong>
+
+        <span>Seconds</span>
+      </div>
+
+    </div>
   );
 
 }
