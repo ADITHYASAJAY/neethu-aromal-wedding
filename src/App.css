@@ -1,5 +1,44 @@
-.body{
+@import url(
+  "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+);
+
+:root {
+  --ivory: #fffdf7;
+  --cream: #f5efe2;
+  --gold: #c9a45c;
+  --gold-dark: #9c7734;
+  --dark: #171513;
+  --text: #29251e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   margin: 0;
-  background: #fffdf8;
-  color: #3d362f;
+
+  background: var(--ivory);
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.wedding-page {
+  width: 100%;
+  overflow: hidden;
 }
