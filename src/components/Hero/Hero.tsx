@@ -1,5 +1,5 @@
 import "./Hero.css";
-import couplePhoto from "../../assets/images/couple1.jpeg";
+import couplePhoto from "../../assets/images/couplehero.jpeg";
 import CountDown from "../Coundown/Countdown";
 function Hero (){
 return(
