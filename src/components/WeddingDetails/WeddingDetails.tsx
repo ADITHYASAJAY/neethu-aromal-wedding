@@ -32,9 +32,21 @@ function WeddingDetails() {
           <span />
         </div>
 
-        <p className="details-date">
-          28 · 12 · 2026
-        </p>
+        <div className="details-date">
+
+          <span className="details-weekday">
+            MONDAY
+          </span>
+
+          <strong>
+            28
+          </strong>
+
+          <span className="details-month">
+            DECEMBER · 2026
+          </span>
+
+        </div>
 
       </div>
 
