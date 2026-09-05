@@ -49,6 +49,40 @@ function WeddingDetails() {
         </div>
 
       </div>
+      
+      {/* =========================
+          INVITATION MESSAGE
+      ========================= */}
+
+      <div className="invitation-message">
+
+        <p className="invitation-kicker">
+          WITH THE BLESSINGS OF OUR FAMILIES
+        </p>
+
+        <p className="invitation-text">
+          With hearts full of joy and gratitude,
+          <br />
+          we invite you to celebrate
+          <br />
+          the beginning of a beautiful new chapter
+          <br />
+          in the lives of
+        </p>
+
+        <h3>
+          Neethu
+          <span>&</span>
+          Aromal
+        </h3>
+
+        <p className="invitation-end">
+          Your presence and blessings
+          <br />
+          mean the world to us.
+        </p>
+
+      </div>
 
 
       {/* =========================

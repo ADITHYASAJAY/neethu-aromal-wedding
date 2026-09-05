@@ -122,6 +122,83 @@
 
   color: #777064;
 }
+/* =========================
+   INVITATION MESSAGE
+========================= */
+
+.invitation-message {
+  width: min(650px, 100%);
+
+  margin: 0 auto 110px;
+
+  text-align: center;
+
+  position: relative;
+}
+
+.invitation-kicker {
+  margin: 0 0 30px;
+
+  color: var(--gold-dark);
+
+  font-size: 8px;
+
+  letter-spacing: 4px;
+}
+
+.invitation-text {
+  margin: 0;
+
+  color: #6f685d;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 21px;
+
+  line-height: 1.7;
+
+  font-style: italic;
+}
+
+.invitation-message h3 {
+  margin: 35px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 6vw, 70px);
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.invitation-message h3 span {
+  color: var(--gold);
+
+  font-size: 30px;
+
+  font-style: italic;
+}
+
+.invitation-end {
+  margin: 0;
+
+  color: #888073;
+
+  font-size: 11px;
+
+  line-height: 1.9;
+
+  letter-spacing: 0.3px;
+}
 
 
 /* =========================
