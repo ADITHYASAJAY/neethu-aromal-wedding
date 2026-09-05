@@ -1,4 +1,5 @@
 import "./WeddingDetails.css";
+import SaveCalendar from "../SaveCalendar/SaveCalendar";
 
 const ceremonyLocation =
   "https://www.google.com/maps/search/?api=1&query=Aanandh+Auditorium,+Varkala,+Vettoor-Cherunniyoor,+Kerala+695141";
@@ -211,7 +212,7 @@ function WeddingDetails() {
         </article>
 
       </div>
-
+      <SaveCalendar />
 
       {/* =========================
           CLOSING

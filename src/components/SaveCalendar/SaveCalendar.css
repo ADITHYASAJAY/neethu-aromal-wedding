@@ -1,0 +1,79 @@
+.save-calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 80px auto 0;
+}
+
+.save-calendar-label {
+  margin: 0;
+  color: var(--gold-dark);
+  font-size: 8px;
+  letter-spacing: 4px;
+}
+
+.save-calendar-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 17px 26px;
+
+  border: 1px solid rgba(174, 139, 70, 0.65);
+  background: transparent;
+
+  color: var(--gold-dark);
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.save-calendar-button::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(174, 139, 70, 0.18);
+  pointer-events: none;
+}
+
+.save-calendar-button:hover {
+  background: var(--gold);
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(120, 90, 35, 0.18);
+}
+
+.calendar-icon {
+  font-size: 18px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.calendar-arrow {
+  font-size: 15px;
+  transition: transform 0.3s ease;
+}
+
+.save-calendar-button:hover .calendar-arrow {
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 750px) {
+  .save-calendar {
+    margin-top: 60px;
+  }
+
+  .save-calendar-button {
+    padding: 16px 21px;
+    font-size: 9px;
+    gap: 13px;
+  }
+}
