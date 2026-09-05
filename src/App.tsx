@@ -6,6 +6,7 @@ import Story from './components/Story/Story';
 import MemoriesSlider from './components/MemoriesSlider/MemoriesSlider';
 import WeddingDetails from './components/WeddingDetails/WeddingDetails';
 import RSVP from './components/RSVP/RSVP';
+import Contact from './components/Contact/Contact';
 function App() {
 
 
@@ -16,6 +17,7 @@ function App() {
    <MemoriesSlider/>
    <WeddingDetails/>
    <RSVP/>
+   <Contact/>
    </main>
   )
 }
