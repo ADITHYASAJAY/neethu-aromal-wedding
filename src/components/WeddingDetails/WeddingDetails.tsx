@@ -1,5 +1,6 @@
 import "./WeddingDetails.css";
 import SaveCalendar from "../SaveCalendar/SaveCalendar";
+import Reveal from "../Reveal/Reveal";
 
 const ceremonyLocation =
   "https://www.google.com/maps/search/?api=1&query=Aanandh+Auditorium,+Varkala,+Vettoor-Cherunniyoor,+Kerala+695141";
@@ -15,7 +16,7 @@ function WeddingDetails() {
           HEADER
       ========================= */}
 
-      <div className="details-header">
+      <Reveal className="details-header">
 
         <p className="details-kicker">
           SAVE THE DATE
@@ -49,42 +50,39 @@ function WeddingDetails() {
 
         </div>
 
-      </div>
+      </Reveal>
       
       {/* =========================
           INVITATION MESSAGE
       ========================= */}
 
-      <div className="invitation-message">
+    <Reveal delay={1} className="invitation-message">
+      <p className="invitation-kicker">
+        WITH THE BLESSINGS OF OUR FAMILIES
+      </p>
 
-        <p className="invitation-kicker">
-          WITH THE BLESSINGS OF OUR FAMILIES
-        </p>
+      <p className="invitation-text">
+        With hearts full of joy and gratitude,
+        <br />
+        we invite you to celebrate
+        <br />
+        the beginning of a beautiful new chapter
+        <br />
+        in the lives of
+      </p>
 
-        <p className="invitation-text">
-          With hearts full of joy and gratitude,
-          <br />
-          we invite you to celebrate
-          <br />
-          the beginning of a beautiful new chapter
-          <br />
-          in the lives of
-        </p>
+      <h3>
+        Neethu
+        <span>&</span>
+        Aromal
+      </h3>
 
-        <h3>
-          Neethu
-          <span>&</span>
-          Aromal
-        </h3>
-
-        <p className="invitation-end">
-          Your presence and blessings
-          <br />
-          mean the world to us.
-        </p>
-
-      </div>
-
+      <p className="invitation-end">
+        Your presence and blessings
+        <br />
+        mean the world to us.
+      </p>
+    </Reveal>
 
       {/* =========================
           EVENTS
@@ -95,67 +93,67 @@ function WeddingDetails() {
         {/* =========================
             CEREMONY
         ========================= */}
-
-        <article className="event-card">
-
-          <div className="event-number">
-            01
-          </div>
-
-          <div className="event-content">
-
-            <p className="event-type">
-              THE CEREMONY
-            </p>
-
-            <h3>
-              Muhurtham
-            </h3>
-
-            <div className="event-time">
-              <span>11:00</span>
-              <small>—</small>
-              <span>11:30 AM</span>
+        <Reveal>
+          <article className="event-card">
+        
+            <div className="event-number">
+              01
             </div>
 
-            <div className="event-divider" />
+            <div className="event-content">
 
-            <p className="venue-label">
-              VENUE
-            </p>
+              <p className="event-type">
+                THE CEREMONY
+              </p>
 
-            <p className="venue-name">
-              Aanandh Auditorium
-              <br />
-              <small>
-                Varkala, Kerala
-              </small>
-            </p>
+              <h3>
+                Muhurtham
+              </h3>
 
-            <a
-              href={ceremonyLocation}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="location-button"
-            >
-              <span>
-                Open Google Maps
-              </span>
+              <div className="event-time">
+                <span>11:00</span>
+                <small>—</small>
+                <span>11:30 AM</span>
+              </div>
 
-              <b>
-                ↗
-              </b>
-            </a>
+              <div className="event-divider" />
 
-          </div>
+              <p className="venue-label">
+                VENUE
+              </p>
 
-        </article>
+              <p className="venue-name">
+                Aanandh Auditorium
+                <br />
+                <small>
+                  Varkala, Kerala
+                </small>
+              </p>
 
+              <a
+                href={ceremonyLocation}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="location-button"
+              >
+                <span>
+                  Open Google Maps
+                </span>
+
+                <b>
+                  ↗
+                </b>
+              </a>
+
+            </div>
+
+            </article>
+        </Reveal>
 
         {/* =========================
             RECEPTION
         ========================= */}
-
+        <Reveal delay={1}>
         <article className="event-card">
 
           <div className="event-number">
@@ -210,15 +208,18 @@ function WeddingDetails() {
           </div>
 
         </article>
-
+        </Reveal>
       </div>
-      <SaveCalendar />
+      <Reveal delay={2}>
+        <SaveCalendar />
+      </Reveal>
+      
 
       {/* =========================
           CLOSING
       ========================= */}
 
-      <div className="details-closing">
+      <Reveal delay={3} className="details-closing">
 
         <p>
           Your presence will make
@@ -230,7 +231,7 @@ function WeddingDetails() {
           ♡
         </span>
 
-      </div>
+      </Reveal>
 
     </section>
   );

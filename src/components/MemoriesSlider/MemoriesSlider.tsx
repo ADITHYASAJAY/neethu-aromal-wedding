@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./MemoriesSlider.css";
+import Reveal from "../Reveal/Reveal";
 
 import photo1 from "../../assets/images/couple1.jpeg";
 import photo2 from "../../assets/images/couple2.jpeg";
@@ -89,7 +90,7 @@ function MemoriesSlider() {
 
 
       {/* Slider */}
-
+      <Reveal>
       <div className="slider">
 
         {slides.map((slide, index) => (
@@ -119,6 +120,7 @@ function MemoriesSlider() {
 
           </div>
         ))}
+       
 
 
         {/* Slide text */}
@@ -181,6 +183,7 @@ function MemoriesSlider() {
         </div>
 
       </div>
+      </Reveal>
 
     </section>
   );

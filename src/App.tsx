@@ -7,6 +7,7 @@ import MemoriesSlider from './components/MemoriesSlider/MemoriesSlider';
 import WeddingDetails from './components/WeddingDetails/WeddingDetails';
 import RSVP from './components/RSVP/RSVP';
 import Contact from './components/Contact/Contact';
+import Finale from './components/Finale/Finale';
 function App() {
 
 
@@ -18,6 +19,7 @@ function App() {
    <WeddingDetails/>
    <RSVP/>
    <Contact/>
+   <Finale/>
    </main>
   )
 }

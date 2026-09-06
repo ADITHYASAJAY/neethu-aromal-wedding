@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./RSVP.css";
+import Reveal from "../Reveal/Reveal";
 
 function RSVP() {
   const [submitted, setSubmitted] = useState(false);
@@ -10,7 +11,7 @@ function RSVP() {
 
   return (
     <section className="rsvp">
-      <div className="rsvp-inner">
+      <Reveal className="rsvp-inner">
         <p className="rsvp-kicker">WE WOULD LOVE TO HAVE YOU</p>
 
         <h2>
@@ -106,7 +107,7 @@ function RSVP() {
             </span>
           </div>
         )}
-      </div>
+      </Reveal>
     </section>
   );
 }

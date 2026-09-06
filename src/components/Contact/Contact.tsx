@@ -1,9 +1,11 @@
+import Reveal from "../Reveal/Reveal";
 import "./Contact.css";
 
 function Contact() {
   return (
     <section className="contact">
       <div className="contact-inner">
+      <Reveal>
         <p className="contact-kicker">NEED A LITTLE HELP?</p>
 
         <h2>
@@ -11,29 +13,32 @@ function Contact() {
           <br />
           <em>for you.</em>
         </h2>
-
+        </Reveal>
         <div className="contact-ornament">
           <span />
           <i>✦</i>
           <span />
         </div>
-
+        <Reveal delay={1}>
         <p className="contact-intro">
           For directions, travel assistance, or anything you need
           <br />
           on our special day, please feel free to reach out.
         </p>
+        </Reveal>
 
         <div className="contact-cards">
-          <a href="tel:+919000000000" className="contact-card">
+        <Reveal>
+          <a href="tel:+919567359296" className="contact-card">
             <span className="contact-icon">♡</span>
             <span className="contact-label">CALL</span>
             <strong>Wedding Assistance</strong>
             <small>Tap to call</small>
           </a>
-
+          </Reveal>
+          <Reveal delay={1}>
           <a
-            href="https://wa.me/919000000000"
+            href="https://wa.me/919567359296"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-card"
@@ -43,6 +48,7 @@ function Contact() {
             <strong>Message Us</strong>
             <small>We're happy to help</small>
           </a>
+          </Reveal>
         </div>
 
         <div className="contact-note">
