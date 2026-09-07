@@ -104,7 +104,7 @@ function MemoriesSlider() {
             {slide.type === "image" ? (
               <img
                 src={slide.src}
-                alt={`${slide.title} - Neethu & Aromal`}
+                alt={`${slide.title} - Aromal & Neethu`}
               />
             ) : (
               <video

@@ -103,7 +103,7 @@ function RSVP() {
             </p>
 
             <span className="success-names">
-              Neethu & Aromal
+              Aromal & Neethu
             </span>
           </div>
         )}

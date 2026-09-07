@@ -22,9 +22,9 @@ function Finale() {
         </h2>
 
         <div className="finale-names">
-          <span>NEETHU</span>
-          <i>&</i>
           <span>AROMAL</span>
+          <i>&</i>
+          <span>NEETHU</span>
         </div>
 
         <div className="finale-date">

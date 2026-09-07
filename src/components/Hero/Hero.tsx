@@ -10,9 +10,9 @@ return(
     <p className='hero-eyebrow'>A BEAUTIFUL BEGINNING</p>
     <div className="hero-line"/>
     <h1 className="hero-title">
-      <span>Neethu</span>
-      <span>&</span> 
       <span>Aromal</span>
+      <span>&</span> 
+      <span>Neethu</span>
       </h1>
     <p className='hero-date'>December 28, 2026</p>
     <p className='hero-description'>Two hearts, one beautiful journey, 

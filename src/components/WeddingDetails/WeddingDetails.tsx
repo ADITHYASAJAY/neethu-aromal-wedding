@@ -72,9 +72,9 @@ function WeddingDetails() {
       </p>
 
       <h3>
-        Neethu
-        <span>&</span>
         Aromal
+        <span>&</span>
+        Neethu
       </h3>
 
       <p className="invitation-end">
