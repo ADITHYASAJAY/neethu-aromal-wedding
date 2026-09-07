@@ -29,7 +29,7 @@ function Contact() {
 
         <div className="contact-cards">
         <Reveal>
-          <a href="tel:+919567359296" className="contact-card">
+          <a href="tel:+919995372187" className="contact-card">
             <span className="contact-icon">♡</span>
             <span className="contact-label">CALL</span>
             <strong>Wedding Assistance</strong>
@@ -38,7 +38,7 @@ function Contact() {
           </Reveal>
           <Reveal delay={1}>
           <a
-            href="https://wa.me/919567359296"
+            href="https://wa.me/919995372187"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-card"

@@ -123,7 +123,7 @@ function WeddingDetails() {
               </p>
 
               <p className="venue-name">
-                Aanandh Auditorium
+                Anand Auditorium
                 <br />
                 <small>
                   Varkala, Kerala
@@ -186,7 +186,7 @@ function WeddingDetails() {
               Sayoojyam Convention Center
               <br />
               <small>
-                Hariharapuram, Kerala
+                Ayroor, Kerala
               </small>
             </p>
 
