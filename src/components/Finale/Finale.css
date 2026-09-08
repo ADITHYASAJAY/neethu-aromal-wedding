@@ -98,7 +98,7 @@
 
 .finale h2 em {
   color: #c9a45c;
-  font-style: italic;
+
 }
 
 .finale-names {
@@ -118,7 +118,7 @@
 .finale-names i {
   color: #c9a45c;
   font-size: 20px;
-  font-style: italic;
+
   letter-spacing: 0;
 }
 
@@ -126,7 +126,7 @@
   margin-top: 20px;
 
   color: #9c9488;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 5px;
 }
 
@@ -141,7 +141,7 @@
   color: #898177;
   font-family: "Cormorant Garamond", serif;
   font-size: 18px;
-  font-style: italic;
+
 }
 
 .finale-heart {

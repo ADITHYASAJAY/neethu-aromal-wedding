@@ -12,10 +12,10 @@ function App() {
   return (
    <main>
    <Hero/>
-   <MemoriesSlider/>
    <WeddingDetails/>
    <RSVP/>
    <Contact/>
+    <MemoriesSlider/>
    <Finale/>
    </main>
   )

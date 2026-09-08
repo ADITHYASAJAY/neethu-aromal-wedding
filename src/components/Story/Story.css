@@ -280,8 +280,6 @@
 
   color: var(--gold);
 
-  font-style: italic;
-
   letter-spacing: -4px;
 
   text-shadow:
@@ -298,8 +296,6 @@
   font-family: "Cormorant Garamond", serif;
 
   font-size: 24px;
-
-  font-style: italic;
 }
 
 
