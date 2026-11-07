@@ -6,7 +6,7 @@ const ceremonyLocation =
   "https://www.google.com/maps/search/?api=1&query=Aanandh+Auditorium,+Varkala,+Vettoor-Cherunniyoor,+Kerala+695141";
 
 const receptionLocation =
-  "https://www.google.com/maps/search/?api=1&query=Sayoojyam+Convention+Center,+QP9F%2B5X7,+Ayiroor-Paripally+Rd,+Hariharapuram,+Kerala+695310";
+  "https://www.google.com/maps/search/?api=1&query=Mookambika+Convention+Centre,+Vattaplamoodu,+Chemmaruthy,+Varkala+Keralam+695145";
 
 function WeddingDetails() {
   return (
@@ -126,7 +126,7 @@ function WeddingDetails() {
                 Anand Auditorium
                 <br />
                 <small>
-                  Varkala, Kerala
+                  Vettoor-cherunniyoor, Varkala
                 </small>
               </p>
 
@@ -183,10 +183,10 @@ function WeddingDetails() {
             </p>
 
             <p className="venue-name">
-              Sayoojyam Convention Center
+              Mookambika Convention Centre
               <br />
               <small>
-                Ayroor, Kerala
+                Vattaplamoodu, Varkala
               </small>
             </p>
 
