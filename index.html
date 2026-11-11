@@ -28,18 +28,33 @@
     </audio>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var music = document.getElementById("bg-music");
-        
-        // Try to play immediately on load
-        music.play().catch(function(error) {
-          // If browser blocks autoplay, play on the visitor's first click anywhere on the site
-          document.body.addEventListener("click", function() {
-            music.play();
-          }, { once: true });
+  document.addEventListener("DOMContentLoaded", function() {
+    var music = document.getElementById("bg-music");
+    var hasStarted = false;
+
+    function playMusic() {
+      if (!hasStarted) {
+        music.play().then(function() {
+          hasStarted = true;
+          // Remove event listeners once music successfully starts playing
+          window.removeEventListener("click", playMusic);
+          window.removeEventListener("scroll", playMusic);
+          window.removeEventListener("touchstart", playMusic);
+        }).catch(function(error) {
+          // Autoplay was prevented; will retry on next interaction
         });
-      });
-    </script>
+      }
+    }
+
+    // Try playing immediately on load (will work if browser permits)
+    playMusic();
+
+    // Listen for the first click, scroll, or touch interaction anywhere on the site
+    window.addEventListener("click", playMusic, { once: true });
+    window.addEventListener("scroll", playMusic, { once: true });
+    window.addEventListener("touchstart", playMusic, { once: true });
+  });
+</script>
 
     <script type="module" src="/src/main.tsx"></script>
   </body>
