@@ -21,6 +21,26 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Background Audio Loop -->
+    <audio id="bg-music" loop preload="auto">
+      <source src="src/assets/music/wedding-song.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var music = document.getElementById("bg-music");
+        
+        // Try to play immediately on load
+        music.play().catch(function(error) {
+          // If browser blocks autoplay, play on the visitor's first click anywhere on the site
+          document.body.addEventListener("click", function() {
+            music.play();
+          }, { once: true });
+        });
+      });
+    </script>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
