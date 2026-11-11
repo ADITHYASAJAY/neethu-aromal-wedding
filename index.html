@@ -24,10 +24,10 @@
 
     <!-- Background Audio Loop -->
     <audio id="bg-music" loop preload="auto">
-      <source src="src/assets/music/wedding-song.mp3" type="audio/mpeg" />
-    </audio>
+  <source src="/src/assets/music/wedding-song.mp3" type="audio/mpeg" />
+</audio>
 
-    <script>
+<script>
   document.addEventListener("DOMContentLoaded", function() {
     var music = document.getElementById("bg-music");
     var hasStarted = false;
@@ -55,7 +55,6 @@
     window.addEventListener("touchstart", playMusic, { once: true });
   });
 </script>
-
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
