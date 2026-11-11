@@ -32,27 +32,27 @@
     var music = document.getElementById("bg-music");
     var hasStarted = false;
 
-    function playMusic() {
+    function triggerPlay() {
       if (!hasStarted) {
         music.play().then(function() {
           hasStarted = true;
-          // Remove event listeners once music successfully starts playing
-          window.removeEventListener("click", playMusic);
-          window.removeEventListener("scroll", playMusic);
-          window.removeEventListener("touchstart", playMusic);
+          // Clean up listeners once playing successfully
+          ["click", "scroll", "touchstart", "pointerdown", "keydown"].forEach(function(eventType) {
+            window.removeEventListener(eventType, triggerPlay);
+          });
         }).catch(function(error) {
-          // Autoplay was prevented; will retry on next interaction
+          console.log("Autoplay blocked by browser policy, waiting for next interaction.");
         });
       }
     }
 
-    // Try playing immediately on load (will work if browser permits)
-    playMusic();
+    // Attempt autoplay immediately (works on some Safari setups)
+    triggerPlay();
 
-    // Listen for the first click, scroll, or touch interaction anywhere on the site
-    window.addEventListener("click", playMusic, { once: true });
-    window.addEventListener("scroll", playMusic, { once: true });
-    window.addEventListener("touchstart", playMusic, { once: true });
+    // Attach listeners for Chrome & other strict browsers
+    ["click", "scroll", "touchstart", "pointerdown", "keydown"].forEach(function(eventType) {
+      window.addEventListener(eventType, triggerPlay, { once: true, passive: true });
+    });
   });
 </script>
     <script type="module" src="/src/main.tsx"></script>
