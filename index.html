@@ -28,31 +28,28 @@
 </audio>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var music = document.getElementById("bg-music");
-    var hasStarted = false;
+  window.addEventListener('DOMContentLoaded', () => {
+    const music = document.getElementById('bg-music');
+    
+    // Function that attempts to play
+    const playAudio = () => {
+      music.play().then(() => {
+        // Once successfully playing, remove all listeners so it runs smoothly
+        window.removeEventListener('click', playAudio);
+        window.removeEventListener('scroll', playAudio);
+        window.removeEventListener('touchstart', playAudio);
+      }).catch((err) => {
+        console.log("Waiting for user interaction...");
+      });
+    };
 
-    function triggerPlay() {
-      if (!hasStarted) {
-        music.play().then(function() {
-          hasStarted = true;
-          // Clean up listeners once playing successfully
-          ["click", "scroll", "touchstart", "pointerdown", "keydown"].forEach(function(eventType) {
-            window.removeEventListener(eventType, triggerPlay);
-          });
-        }).catch(function(error) {
-          console.log("Autoplay blocked by browser policy, waiting for next interaction.");
-        });
-      }
-    }
+    // Try playing immediately
+    playAudio();
 
-    // Attempt autoplay immediately (works on some Safari setups)
-    triggerPlay();
-
-    // Attach listeners for Chrome & other strict browsers
-    ["click", "scroll", "touchstart", "pointerdown", "keydown"].forEach(function(eventType) {
-      window.addEventListener(eventType, triggerPlay, { once: true, passive: true });
-    });
+    // Listen for the absolute first user click, scroll, or touch on the window
+    window.addEventListener('click', playAudio, { once: true });
+    window.addEventListener('scroll', playAudio, { once: true });
+    window.addEventListener('touchstart', playAudio, { once: true });
   });
 </script>
     <script type="module" src="/src/main.tsx"></script>
