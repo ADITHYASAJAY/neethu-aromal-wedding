@@ -1,78 +1,52 @@
 import { useEffect, useState } from "react";
-import './Countdown.css';
+import "./Countdown.css";
 
-function CountDown(){
+// ISO string with the IST offset: parses the same in every browser
+// (including Safari) and counts to the real moment for guests abroad.
+const WEDDING_DATE = new Date("2026-12-28T11:00:00+05:30").getTime();
 
-  const weddingDate = new Date("December 28, 2026,11:00:00").getTime();
-  
-  const calculateTimeLeft = () =>{
-    const now = new Date().getTime();
-    const difference = weddingDate - now;
-    if(difference <=0){
-      return{
-        days:0,
-        hours:0,
-        minutes:0,
-        seconds:0,
-      };
-    }
-    return{
-      days: Math.floor((difference/(1000*60*60*24))),
-      hours:Math.floor((difference/(1000*60*60)%24)),
-      minutes:Math.floor((difference/(1000*60)%60)),
-      seconds:Math.floor((difference/1000)%60),
-    };
+function getTimeLeft() {
+  const difference = WEDDING_DATE - Date.now();
+
+  if (difference <= 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   }
 
-  const [timeleft, setTimeLeft] = useState(calculateTimeLeft());
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / (1000 * 60)) % 60),
+    seconds: Math.floor((difference / 1000) % 60),
+  };
+}
 
-  useEffect(()=>{
-    const timer = setInterval(()=>{
-      setTimeLeft(calculateTimeLeft());
-    },1000);
-    return ()=> clearInterval(timer);
-  });
+const pad = (value: number) => String(value).padStart(2, "0");
 
-  const format = (value: number) =>
-  String(value).padStart(2, "0");
+function CountDown() {
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft);
 
-  return(
-    <div className="countdown">
+  useEffect(() => {
+    const timer = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
+    return () => clearInterval(timer);
+  }, []);
 
-      <div className="countdown-item">
-        <strong key={timeleft.days}>
-          {format(timeleft.days)}
-        </strong>
+  const items = [
+    { label: "Days", value: timeLeft.days },
+    { label: "Hours", value: timeLeft.hours },
+    { label: "Minutes", value: timeLeft.minutes },
+    { label: "Seconds", value: timeLeft.seconds },
+  ];
 
-        <span>Days</span>
-      </div>
-
-      <div className="countdown-item">
-        <strong key={timeleft.hours}>
-          {format(timeleft.hours)}
-        </strong>
-
-        <span>Hours</span>
-      </div>
-
-      <div className="countdown-item">
-        <strong key={timeleft.minutes}>
-          {format(timeleft.minutes)}
-        </strong>
-
-        <span>Minutes</span>
-      </div>
-
-      <div className="countdown-item">
-        <strong key={timeleft.seconds}>
-          {format(timeleft.seconds)}
-        </strong>
-
-        <span>Seconds</span>
-      </div>
-
+  return (
+    <div className="countdown" role="timer" aria-label="Time until the wedding">
+      {items.map(({ label, value }) => (
+        <div className="countdown-item" key={label}>
+          <strong key={value}>{pad(value)}</strong>
+          <span>{label}</span>
+        </div>
+      ))}
     </div>
   );
-
 }
+
 export default CountDown;

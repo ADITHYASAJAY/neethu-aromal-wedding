@@ -1,15 +1,43 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Ballet&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap');
-
+/* =====================================================
+   DESIGN TOKENS — Floral & Romantic
+   Colours are sampled from the hero artwork:
+   blush watercolour, rose petals, sage leaves,
+   and the wine-red / navy of the couple's outfits.
+===================================================== */
 :root {
-  --ivory: #fffdf7;
+  /* Surfaces */
+  --ivory: #fffaf5;      /* page background */
+  --panel: #f9e4da;      /* blush panel (matches hero image edge) */
+  --blush: #f6dfd6;      /* soft cards */
+  --petal: #ebb9ae;      /* decorative fills, borders */
+
+  /* Florals */
+  --rose: #c76f7b;       /* dusty rose — large display text, ornaments */
+  --wine: #8a2f45;       /* names, headings (≈7:1 on blush) */
+  --sage: #7d8b63;       /* leaves — ornaments */
+  --sage-deep: #55663f;  /* small sage text (≈5:1 on blush) */
+  --rose-gold: #b98062;  /* hairlines, ampersand, icons */
+
+  /* Night sections (RSVP / Finale) */
+  --plum: #3a2030;
+  --plum-deep: #2a1622;
+  --navy: #2e3b6e;       /* from the saree — accent only */
+
+  /* Text */
+  --ink: #3f2a2e;
+  --muted: #6e5459;
+
+  /* Fonts */
+  --font-script: "Pinyon Script", "Great Vibes", cursive;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+
+  /* Legacy tokens — safe to delete if nothing else uses them */
   --cream: #f5eee7;
   --gold: #b99a75;
   --gold-dark: #94765d;
   --dark: #493e3a;
   --text: #5d514b;
-  --sage: #879477;
-  --rose: #d9b7ae;
 }
 
 * {
@@ -23,8 +51,9 @@ html {
 body {
   margin: 0;
   background: var(--ivory);
-  color: var(--text);
-  font-family: "Montserrat", sans-serif;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -32,7 +61,8 @@ img {
   max-width: 100%;
 }
 
-button, a {
+button,
+a {
   font: inherit;
 }
 

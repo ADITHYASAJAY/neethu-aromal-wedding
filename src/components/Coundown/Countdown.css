@@ -1,32 +1,29 @@
+/* =====================================================
+   COUNTDOWN
+   Fonts:  Cormorant Garamond (numbers) · Jost (labels)
+   Colours: wine numbers · muted labels · soft white glass on blush
+===================================================== */
+
 .countdown {
-  margin: 40px auto 0;
-
+  margin: 14px auto 0;
   width: fit-content;
-
+  max-width: 100%;
   display: flex;
   align-items: center;
+  padding: 18px 14px;
 
-  padding: 17px 25px;
+  border: 1px solid rgba(138, 47, 69, 0.22);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 14px 40px rgba(138, 47, 69, 0.08);
+  backdrop-filter: blur(6px);
 
-  border-top: 1px solid rgba(231, 200, 121, 0.55);
-  border-bottom: 1px solid rgba(231, 200, 121, 0.55);
-
-  background: rgba(20, 15, 8, 0.18);
-
-  backdrop-filter: blur(8px);
-
-  animation:
-    countdownReveal
-    1.3s
-    1.4s
-    both;
+  animation: countdownReveal 1.2s 1s both;
 }
 
 .countdown-item {
   position: relative;
-
-  min-width: 72px;
-
+  min-width: 84px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,98 +31,78 @@
 
 .countdown-item + .countdown-item::before {
   content: "";
-
   position: absolute;
-
   left: 0;
-  top: 10px;
-
+  top: 8px;
   width: 1px;
-  height: 35px;
-
-  background: rgba(231, 200, 121, 0.35);
+  height: 40px;
+  background: rgba(185, 128, 98, 0.4);
 }
 
 .countdown-item strong {
-  color: #f0d58d;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 40px;
-
-  font-weight: 400;
-
+  color: var(--wine);
+  font-family: var(--font-serif);
+  font-size: 46px;
+  font-weight: 500;
   line-height: 1;
-
-  text-shadow:
-    0 0 20px rgba(231, 200, 121, 0.3);
-
+  font-variant-numeric: tabular-nums;
   animation: numberFlip 0.45s ease;
 }
 
 .countdown-item span {
-  margin-top: 7px;
-
-  color: rgba(255, 255, 255, 0.75);
-
-  font-size: 7px;
-
-  letter-spacing: 3px;
-
+  margin-top: 8px;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 
 @keyframes countdownReveal {
   from {
     opacity: 0;
-    transform: translateY(20px);
-    filter: blur(5px);
+    transform: translateY(18px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
 }
 
 @keyframes numberFlip {
   from {
     opacity: 0;
-
-    transform:
-      translateY(-10px)
-      scale(0.85);
-
-    filter: blur(3px);
+    transform: translateY(-8px) scale(0.9);
   }
-
   to {
     opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 
-    transform:
-      translateY(0)
-      scale(1);
-
-    filter: blur(0);
+@media (prefers-reduced-motion: reduce) {
+  .countdown,
+  .countdown-item strong {
+    animation: none;
   }
 }
 
 @media (max-width: 700px) {
   .countdown {
-    padding: 15px 8px;
+    padding: 15px 6px;
   }
 
   .countdown-item {
-    min-width: 62px;
+    min-width: 66px;
   }
 
   .countdown-item strong {
-    font-size: 31px;
+    font-size: 34px;
   }
 
   .countdown-item span {
-    font-size: 6px;
-    letter-spacing: 2px;
+    font-size: 9px;
+    letter-spacing: 0.18em;
   }
 }
