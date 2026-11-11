@@ -1,7 +1,7 @@
 import "./WeddingDetails.css";
 import SaveCalendar from "../SaveCalendar/SaveCalendar";
 import Reveal from "../Reveal/Reveal";
-import { FloralCorner, FloralDivider } from "../Floral/Floral";
+import { FloralCorner } from "../Floral/Floral";
 
 const ceremonyLocation =
   "https://www.google.com/maps/search/?api=1&query=Aanandh+Auditorium,+Varkala,+Vettoor-Cherunniyoor,+Kerala+695141";
