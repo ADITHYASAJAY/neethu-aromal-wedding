@@ -39,50 +39,10 @@ function WeddingDetails() {
       <FloralCorner position="br" />
 
       {/* HEADER */}
-      <Reveal className="details-header">
-        <p className="details-kicker">Save the date</p>
-
-        <h2>
-          Join us as we
-          <br />
-          <em>begin forever.</em>
-        </h2>
-
-        <FloralDivider className="details-divider" />
-
-        <div className="details-date">
-          <span className="details-weekday">Monday</span>
-          <strong>28</strong>
-          <span className="details-month">December · 2026</span>
-        </div>
-      </Reveal>
+      
 
       {/* INVITATION MESSAGE */}
-      <Reveal delay={1} className="invitation-message">
-        <p className="invitation-kicker">With the blessings of our families</p>
-
-        <p className="invitation-text">
-          With hearts full of joy and gratitude,
-          <br />
-          we invite you to celebrate
-          <br />
-          the beginning of a beautiful new chapter
-          <br />
-          in the lives of
-        </p>
-
-        <h3>
-          <span className="invitation-name">Aromal</span>
-          <span className="invitation-amp">&amp;</span>
-          <span className="invitation-name">Neethu</span>
-        </h3>
-
-        <p className="invitation-end">
-          Your presence and blessings
-          <br />
-          mean the world to us.
-        </p>
-      </Reveal>
+      
 
       {/* EVENTS */}
       <div className="events">
