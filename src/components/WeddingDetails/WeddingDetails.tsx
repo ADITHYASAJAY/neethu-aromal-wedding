@@ -1,5 +1,4 @@
 import "./WeddingDetails.css";
-import SaveCalendar from "../SaveCalendar/SaveCalendar";
 import Reveal from "../Reveal/Reveal";
 import { FloralCorner } from "../Floral/Floral";
 
@@ -84,12 +83,10 @@ function WeddingDetails() {
         ))}
       </div>
 
-      <Reveal delay={2}>
-        <SaveCalendar />
-      </Reveal>
+      
 
       {/* CLOSING */}
-      <Reveal delay={3} className="details-closing">
+      <Reveal delay={2} className="details-closing">
         <p>
           Your presence will make
           <br />
