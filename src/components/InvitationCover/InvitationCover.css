@@ -1,0 +1,176 @@
+/* =====================================================
+   INVITATION COVER
+   Fonts:  Pinyon Script (names) · Cormorant Garamond (&, note) · Jost (labels, button)
+   Colours: blush panel · wine names & button · sage ampersand
+===================================================== */
+
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(199, 111, 123, 0.2), transparent 45%),
+    radial-gradient(circle at 15% 90%, rgba(125, 139, 99, 0.2), transparent 45%),
+    var(--panel);
+  transition:
+    opacity 1.1s ease,
+    transform 1.3s cubic-bezier(0.7, 0, 0.2, 1),
+    visibility 0s 1.3s;
+}
+
+.cover.is-open {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-5%) scale(1.04);
+}
+
+.cover-floral {
+  width: clamp(110px, 20vw, 240px);
+  opacity: 0.85;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  width: min(640px, 90%);
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* staggered entrance */
+.cover-content > * {
+  animation: coverUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.cover-content > :nth-child(2) { animation-delay: 0.15s; }
+.cover-content > :nth-child(3) { animation-delay: 0.3s; }
+.cover-content > :nth-child(4) { animation-delay: 0.45s; }
+.cover-content > :nth-child(5) { animation-delay: 0.65s; }
+.cover-content > :nth-child(6) { animation-delay: 0.85s; }
+
+.cover-eyebrow {
+  margin: 0;
+  color: var(--wine);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+}
+
+.cover-divider {
+  margin-block: 26px 22px;
+}
+
+.cover-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-script);
+  line-height: 1;
+}
+
+.cover-names span {
+  color: var(--wine);
+  font-size: clamp(76px, 19vw, 120px);
+}
+
+.cover-names i {
+  margin: 2px 0 4px;
+  color: var(--sage-deep);
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(38px, 9vw, 56px);
+}
+
+.cover-date {
+  margin: 26px 0 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+}
+
+.cover-button {
+  position: relative;
+  margin-top: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 36px;
+  border: 1px solid var(--wine);
+  border-radius: 2px;
+  background: var(--wine);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cover-button span:first-child {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+/* soft pulsing ring that invites the tap */
+.cover-button::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 1px solid var(--rose);
+  border-radius: 4px;
+  opacity: 0;
+  animation: coverPulse 2.4s 2s ease-out infinite;
+  pointer-events: none;
+}
+
+.cover-button:hover,
+.cover-button:focus-visible {
+  background: transparent;
+  color: var(--wine);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(138, 47, 69, 0.2);
+}
+
+.cover-note {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+}
+
+@keyframes coverUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes coverPulse {
+  0% { opacity: 0.7; transform: scale(0.96); }
+  100% { opacity: 0; transform: scale(1.12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover,
+  .cover-content > *,
+  .cover-button::after { animation: none; transition: none; }
+}
+
+@media (max-width: 600px) {
+  .cover-floral { width: 100px; opacity: 0.75; }
+  .cover-date { font-size: 21px; }
+  .cover-button { padding: 17px 30px; }
+}
