@@ -15,43 +15,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@400;500&family=Pinyon+Script&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div id="root"></div>
 
-    <!-- Background Audio Loop -->
-    <audio id="bg-music" loop preload="auto">
-  <source src="/wedding-song.mp3" type="audio/mpeg" />
-</audio>
+    <!-- Background music: started by the "Open invitation" tap (see App.tsx) -->
+    <audio id="bg-music" loop preload="none">
+      <source src="/wedding-song.mp3" type="audio/mpeg" />
+    </audio>
 
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const music = document.getElementById('bg-music');
-    
-    // Function that attempts to play
-    const playAudio = () => {
-      music.play().then(() => {
-        // Once successfully playing, remove all listeners so it runs smoothly
-        window.removeEventListener('click', playAudio);
-        window.removeEventListener('scroll', playAudio);
-        window.removeEventListener('touchstart', playAudio);
-      }).catch((err) => {
-        console.log("Waiting for user interaction...");
+    <script>
+      // Download the song only AFTER the page has finished loading, so it never
+      // competes with the hero photo. Delete this block if you'd rather guests
+      // download the 4 MB only when they tap "Open invitation".
+      window.addEventListener("load", function () {
+        var music = document.getElementById("bg-music");
+        if (music) {
+          music.preload = "auto";
+          music.load();
+        }
       });
-    };
+    </script>
 
-    // Try playing immediately
-    playAudio();
-
-    // Listen for the absolute first user click, scroll, or touch on the window
-    window.addEventListener('click', playAudio, { once: true });
-    window.addEventListener('scroll', playAudio, { once: true });
-    window.addEventListener('touchstart', playAudio, { once: true });
-  });
-</script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
